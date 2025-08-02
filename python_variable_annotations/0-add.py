@@ -7,13 +7,13 @@ Module
 def add(a: float, b: float) -> float:
     """
     Add two floting-point numbers.
-    
 
-    Args: 
+
+    Args:
     a(float): the first number.
     b(float): the second number.
 
-    
+
     Returns:
     Floats: The sum of a and b.
     """
