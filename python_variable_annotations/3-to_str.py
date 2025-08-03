@@ -4,19 +4,18 @@ Floor
 """
 import math
 
-def concat(n: float) -> int:
+def to_str(n: float) -> str:
     """
-    Calculates the floor of a given float number
+    Converts a float to its string representation.
 
 
     Args:
-    n: The float number for which to calculate the floor
-    
+        n: The float number to convert.
+
+
     Returns:
-    The floor of the input float as an integer
+        The string representation of the float.
 
     """
-    if not isinstance(n, float):
-        raise TypeError("n must be a float")
     
-    return math.floor(n)
+    return str(n)
