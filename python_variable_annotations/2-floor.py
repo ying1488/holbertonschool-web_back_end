@@ -4,7 +4,7 @@ Floor
 """
 import math
 
-def concat(n: float) -> int:
+def floor(floor: float) -> int:
     """
     Calculates the floor of a given float number
 
@@ -16,7 +16,4 @@ def concat(n: float) -> int:
     The floor of the input float as an integer
 
     """
-    if not isinstance(n, float):
-        raise TypeError("n must be a float")
-    
-    return math.floor(n)
+    return math.floor(floor)
