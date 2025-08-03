@@ -4,23 +4,16 @@ Let's duck type an iterable object
 
 """
 
-def element_length(lst):
-    return [(i, len(i)) for i in lst]
-
-
-def make_multiplier(multiplier: float) -> Callable[[float], float]:
-    """
-    function that returns a fuction that multiplies a float by multiplier
-
+from typing import Iterable, List, Tuple, Sequence
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """function that returns a list of tuples containing
+    the element and its length.
 
     Args:
-        make_multiplier: floats
-
+        lst (List[str]): A list of strings.
 
     Returns:
-        fuction that multiplies a float by multiplier
+        List[Tuple[str, int]]: A list of tuples where each tuple contains
+        an element from the list and its length.
     """
-
-    def second_multiplier(value: float) -> float:
-        return multiplier * value
-    return second_multiplier
+    return [(i, len(i)) for i in lst]
