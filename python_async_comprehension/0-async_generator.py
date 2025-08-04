@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+""" Module """
 import asyncio
 import random
 from typing import Generator
