@@ -7,6 +7,7 @@ for a specific page in pagination.
 
 from typing import Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple:
     """ This function calculates the start index and end index
     and returns a tuple of the results
