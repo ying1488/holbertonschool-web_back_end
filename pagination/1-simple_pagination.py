@@ -41,7 +41,7 @@ class Server:
         assert isinstance(page, int), "page must be an integer"
         assert page > 0,"page must be greater than 0"
         assert isinstance(page_size, int), "page_size must be an integer"
-        assert page_size > 0, "page_size must be greater than 0"
+        assert page_size > 0,"page_size must be greater than 0"
         data = self.dataset()
         start_idx, end_idx = index_range(page, page_size)
         if start_idx > len(data):
