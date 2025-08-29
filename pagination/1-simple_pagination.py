@@ -39,9 +39,9 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ function devides pages equally"""
         assert isinstance(page, int), "page must be an integer"
-        assert page > 0,"page must be greater than 0"
+        assert page > 0, "page must be greater than 0"
         assert isinstance(page_size, int), "page_size must be an integer"
-        assert page_size > 0,"page_size must be greater than 0"
+        assert page_size > 0, "page_size must be greater than 0"
         data = self.dataset()
         start_idx, end_idx = index_range(page, page_size)
         if start_idx > len(data):
