@@ -43,13 +43,13 @@ class Server:
         """This function returns a dict showing page info"""
         if index is None:
             index = 0
-        
-        assert index >=0, "index must be a positive integer"
+
+        assert index >= 0, "index must be a positive integer"
         assert isinstance(index, int), "Index must be integer type"
         assert isinstance(page_size, int), "Page size must be integer type"
 
         data = self.dataset()
-        page_data = data[index:index+ page_size]
+        page_data = data[index:index + page_size]
 
         return {
             'index': index,
