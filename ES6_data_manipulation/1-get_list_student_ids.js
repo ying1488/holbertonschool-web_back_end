@@ -1,5 +1,5 @@
 
-export default function getLstStudents(arr) {
+export default function getListStudents(arr) {
     if (!Array.isArray(arr)){
         return [];
     }
