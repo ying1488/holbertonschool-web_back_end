@@ -1,4 +1,3 @@
-
 export default function getListStudents(arr) {
     if (!Array.isArray(arr)){
         return [];
