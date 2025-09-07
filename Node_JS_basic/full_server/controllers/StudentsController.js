@@ -1,28 +1,28 @@
-const readDatabase = require("../utils");
+const readDatabase = require('../utils');
 const path = require('path');
 const databaseFilePath = path.join(__dirname, '..', '..', 'database.csv');
 
-class StudentController {
-    static async getAllStudents(req, res){
-        try{
-            const data = await readDatabase(databaseFilePath);
-            let text = 'This is the list of out students\n';
+class StudentsController {
+  static async getAllStudents(request, response) {
+    try {
+      const data = await readDatabase(databaseFilePath);
+      let text = 'This is the list of our students\n';
 
-            const fields = Object.keys(data).sort((a, b)=>a.toLowerCase().localeCompare(b.toLowerCase()));
+      // Sort alphabetically by field names
+      const fields = Object.keys(data).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-            fields.forEach((field)=>{
-                const students = data[field];
-                text += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
-            });
+      fields.forEach((field) => {
+        const students = data[field];
+        text += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
+      });
 
-            return res.status(200).send(text);
-        } catch (error) {
-            return res.status(500).send('Cannot load the database');
-        }
+      return response.status(200).send(text); // Send the dynamically created text
+    } catch (error) {
+      return response.status(500).send('Cannot load the database');
     }
-}
+  }
 
-static async getAllStudentsByMajor(request, response) {
+  static async getAllStudentsByMajor(request, response) {
     const major = request.params.major;
 
     if (major !== 'CS' && major !== 'SWE') {
@@ -42,5 +42,6 @@ static async getAllStudentsByMajor(request, response) {
       return response.status(500).send('Cannot load the database');
     }
   }
+}
 
 module.exports = StudentsController;
