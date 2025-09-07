@@ -2,10 +2,10 @@ const http = require('http');
 const countStudents = require('./3-read_file_async.js');
 const host = '127.0.0.1';
 
-const app = http.createServer((req, res) => {
+const app = http.createServer(async (req, res) => {
   const url = req.url;
 
-  if (url === '/'{
+  if (url === '/'){
     res.end('Hello Holberton School!');
   }
   if (url === '/students') {
@@ -17,6 +17,7 @@ const app = http.createServer((req, res) => {
         console.error(err);
         res.end('Cannot load the database')
     }
+}
 });
 
 app.listen(1245, host, ()=>{
