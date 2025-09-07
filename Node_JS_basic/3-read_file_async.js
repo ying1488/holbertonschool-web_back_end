@@ -1,6 +1,6 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 
-function countStudents(filePath) {
+function countStudents(path) {
   try {
     const data = fs.readFileSync(filePath, 'utf8');
     const lines = data.split('\n').filter((line) => line.trim() !== '');
@@ -17,7 +17,6 @@ function countStudents(filePath) {
         if (field === 'CS') studentsCS.push(studentName);
         if (field === 'SWE') studentsSWE.push(studentName);
     }
-
     const output = [
         `Number of students: ${totalStudents}`,
         `Number of students in CS: ${studentsCS.length}. List: ${studentsCS.join(', ')}`,
