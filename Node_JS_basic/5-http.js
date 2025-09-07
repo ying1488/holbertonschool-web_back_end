@@ -4,7 +4,7 @@ const countStudents = require('./3-read_file_async');
 const host = '127.0.0.1';
 
 const app = http.createServer(async (req, res) => {
-  const {url} = req;
+  const { url } = req;
 
   if (url === '/') {
     res.end('Hello Holberton School!');
