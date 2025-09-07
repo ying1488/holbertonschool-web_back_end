@@ -1,8 +1,9 @@
-var http = require('http');
-const countStudents = require('./3-read_file_async');
-const host = '127.0.0.1'
+const http = require('http');
 
-var app = http.createServer(async (req, res) => {
+const countStudents = require('./3-read_file_async');
+const host = '127.0.0.1';
+
+const app = http.createServer(async({req, res}) => {
   const url = req.url;
 
   if (url === '/') {
