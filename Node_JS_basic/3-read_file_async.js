@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 
-function countStudents(path) {
+async function countStudents(path) {
   try {
     const data = fs.readFileSync(filePath, 'utf8');
     const lines = data.split('\n').filter((line) => line.trim() !== '');
