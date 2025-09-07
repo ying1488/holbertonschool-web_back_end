@@ -9,13 +9,13 @@ function countStudents(filePath) {
 
     // Iterate through the lines and process student data
     lines.forEach((line) => {
-    const [firstname, lastname, age, field] = line.split(',');
+      const [firstname, lastname, age, field] = line.split(',');
 
-    if (field === 'CS') {
-        studentsCS.push(firstname);
-    } else if (field === 'SWE') {
-        studentsSWE.push(firstname);
-    }
+      if (field === 'CS') {
+          studentsCS.push(firstname);
+      } else if (field === 'SWE') {
+          studentsSWE.push(firstname);
+      }
     });
 
     console.log(`Number of students: ${studentsCS.length + studentsSWE.length}`);
